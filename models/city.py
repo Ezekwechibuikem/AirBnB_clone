@@ -1,8 +1,7 @@
 #!/usr/bin/python3
 """Module creates a User class"""
 
-from .base_model import BaseModel
-
+from models.base_model import BaseModel
 
 class City(BaseModel):
     """Handling Class for managing city objects"""
