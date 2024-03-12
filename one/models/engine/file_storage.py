@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""This module is the file storage class"""
+"""Module handles ]the file storage class"""
 import json
 import os
 import datetime
@@ -14,18 +14,18 @@ class FileStorage():
     #     pass
 
     def all(self):
-        '''returns the dictionary __objects'''
+        '''Returns the dictionary __objects'''
         return self.__objects
 
     def new(self, obj):
-        '''sets in __objects the obj with key <obj class name>.id'''
+        '''Sets in __objects the obj with key <obj class name>.id'''
         objname = obj.__class__.__name__
         objID = obj.id
         key = f"{objname}.{objID}"  # <class name>.id = obj
         self.__objects[key] = obj
 
     def save(self):
-        ''' serializes __objects to the JSON file (path: __file_path)'''
+        '''Handles and serializes __objects to the JSON file (path: __file_path)'''
         # serialize the object by first converting it to a dictionary
         object_dict = {}
 
@@ -59,7 +59,7 @@ class FileStorage():
         return classes
 
     def reload(self):
-        """Reloads the stored objects"""
+        """Reloads and handles the stored objects"""
         if os.path.exists(FileStorage.__file_path):
             #  load the file and dump content as dictionary
             with open(FileStorage.__file_path, "r", encoding="utf-8") \

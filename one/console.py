@@ -1,11 +1,11 @@
 #!/usr/bin/python3
-'''Command Line Interpreter'''
+'''Console command Line Interpreter'''
 import cmd
 import json
 import re
 import sys
 
-from models import *
+from models import * '''ímporting all the classes in the models once'''
 from models import storage
 
 
@@ -13,21 +13,21 @@ class HBNBCommand(cmd.Cmd):
     prompt = "(hbnb)"
 
     def do_EOF(self, *args):
-        '''Usage: EOF
+        '''Handles usage: EOF
            Function: Exits the program
         '''
         print()
         return True
 
     def do_quit(self, *args):
-        '''Usage: quit
+        '''Handles usage: quit
            Function: Exits the program
         '''
         # quit()
         return True
 
     def do_create(self, line):
-        '''Usage: 1. create <class name> | 2. <class name>.create()
+        '''Handles usage: 1. create <class name> | 2. <class name>.create()
 Function: Creates an instance of the class
         '''
         if line != "" or line is not None:
@@ -71,7 +71,7 @@ Function: Shows the instance details of the class
                     print("** class doesn't exist **")
 
     def do_destroy(self, line):
-        '''Usage: 1. destroy <class name> <id> | 2. <class name>.delete(<id>)
+        '''Handles usage: 1. destroy <class name> <id> | 2. <class name>.delete(<id>)
 Function: Deletes the instance  of the class
         '''
         # check if class name and instance id was provided
